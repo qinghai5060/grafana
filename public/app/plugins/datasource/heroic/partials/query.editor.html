@@ -1,0 +1,29 @@
+<div class="gf-form">
+	<div class="gf-form-row">
+		<span class="gf-fluid-input">
+			<input type="text" class="input" ng-model="ctrl.target.alias"></input>
+		</span>
+	</div>
+	<div class="gf-form-row">
+		<span class="gf-fluid-input">
+			<textarea rows="5" class="input" ng-model="ctrl.target.query"></textarea>
+		</span>
+	</div>
+	<div class="gf-form-row">
+		<button class="btn btn-inverse" disabled="true">
+			<i ng-show="validQuery" class="fa fa-check"></i>
+			<span ng-hide="validQuery">
+				<i class="fa fa-exclamation"></i>
+				{{queryError}}
+			</span>
+		</button>
+
+		<span ng-show="countingSeries">
+			<i ng-show="validQuery" class="fa fa-spinner fa-spin"></i>
+		</span>
+
+		<span ng-show="seriesCount !== null">
+			{{seriesCount}} matching series
+		</span>
+	</div>
+</div>
